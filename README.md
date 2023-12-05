@@ -17,8 +17,11 @@ In the unsupervised behavioral semantic temporal localization task, the proposed
 ## Preparation
 
 System：Linux Ubuntu20.04
+
 CUDA Version: 11.4
+
 GPU: NVIDIA 3090
+
 Pytorch-gpu: 1.12.0
 
 You can download our resource files [here](https://zjuteducn-my.sharepoint.com/personal/211122120051_zjut_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2F211122120051%5Fzjut%5Fedu%5Fcn%2FDocuments%2Fresources&ga=1).
