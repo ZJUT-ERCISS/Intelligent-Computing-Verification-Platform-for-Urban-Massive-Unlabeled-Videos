@@ -22,24 +22,41 @@ CUDA Version: 11.4
 
 GPU: NVIDIA 3090
 
-Pytorch-gpu: 1.12.0
+Pytorch-gpu: 1.12.1
 
-You can download our resource files [here](https://zjuteducn-my.sharepoint.com/personal/211122120051_zjut_edu_cn/_layouts/15/onedrive.aspx?id=%2Fpersonal%2F211122120051%5Fzjut%5Fedu%5Fcn%2FDocuments%2Fresources&ga=1).
 
-## Training
+The python environment requirements can be found in the [requirements.txt](https://github.com/ZJUT-ERCISS/Meta-learning_Metric_System/blob/main/requirements.txt) or [environments.yaml](https://github.com/ZJUT-ERCISS/Meta-learning_Metric_System/blob/main/environment.yaml). 
+
+
+You can download our checkpoint, pickle, list files [here](https://zjuteducn-my.sharepoint.com/:f:/g/personal/211122120051_zjut_edu_cn/EkTP-ovknK1No901VBEDGPYBJ_4qR9va-gEPhKomH7ydRw?e=aR2G2a).
+
+## Train
 
 You can use the following command to train model:
 ```
 python ./train_model.py
 ```
 
+## Test
+
+You can use the following command to test our model:
+```
+python test.py
+```
+
+You can test the metric performance of our model by running the following command:
+```
+python metric_eval.py
+```
+
 
 ## Inference
 
 First, you need to create a list file that contains the video file paths and categories as an argument to your inference script. An example is followed:
-
 ```
-video/example.mp4 42
+video/example1.mp4 42
+video/example2.mp4 42
+...
 ```
 
 Then you can use the following command to infer a video:
