@@ -1,20 +1,27 @@
-# Meta-learning_Metric_System
+# 面向城市海量非标注视频理解的智能计算验证平台
 
-## Introduction
+## 平台介绍
 
-The meta-learning metric system based on weak correlation semantic features is a context-aware system that can quickly locate pedestrian events and understand semantic content in real time. It has a wide range of applications in a small amount of annotated urban surveillance scenes, active perception of massive data and other fields.
+实现城市万路级监控非标注数据网络下的自动化和智能化，是保障社会公共安全和交通管理提供高效可靠的技术手段。本项目基于弱监督、元学习相关的前沿理论研究，结合边缘计算、结构化存储框架，实现更加智能高效的城市海量非标注视频理解。如下图面向城市海量非标注视频理解的智能计算验证平台所示，本项目基于智能的分布式多源异构计算平台，构建分布式计算、结构化存储、低复杂度对抗训练框架，集成场景弱相关语义感知、持续时域语义感知、度量元学习语义推理、轻量化边缘计算网络压缩等功能组件，实现面向万路级城市非标注视频数据的行为识别、标签推理、时域感知等行业应用验证。
 
-The prototype representation of the category can be formed by only a small number of samples. By measuring the feature distance between the scene video feature and the prototype feature, the semantic category of the unseen scene can be recognized, which significantly improves the semantic detection ability in the actual scene.
+![面向城市海量非标注视频理解的智能计算验证平台](resources/intelligent_computing_platform.png)
 
-## Dataset
+在面向城市海量非标注视频理解的智能计算验证平台上，基于完备多样的边缘感知功能组件，实现多模态智能计算技术在精细化城市治理场景下的应用验证。通过场景弱相关的行为识别，能够及时有效地将模型部署在不同场景当中，减少了模型二次调优的需要；通过度量元学习语义标签推理，能够有效提升模型在针对未见的语义类别的判别精度；通过持续性时域感知和结构化语义实践存储，能够在海量数据中快速响应，缓解传输和存储压力，快速响应事件和检索。
 
-In the general action recognition task, a data set containing 144 categories and a total of 156910 samples is constructed for system training and validation. It contains 120 categories of basic motion data from the "NTU RGB+D 120" dataset, totaling 114,480 3D skeleton data. In addition, in order to enhance the two-dimensional skeleton perception ability of the model, this system extracts 24 representative behavior categories from the kinetic data set, totaling 42430 video samples, and extracts two-dimensional skeleton information from them to form the data set content.
+项目基于已有的研究基础集成整合的基于弱相关语义特征的元学习度量系统是一款能快速定位行人事件、实时理解语义内容的背景弱相关场景语义感知系统，在少量标注的城市监控场景、海量数据的主动感知等领域具有广泛应用。本系统面向实际场景实现了单样本行为识别任务，对于未见行为语义类别的识别有显著的效果，可以仅通过少量的样本形成类别原型表征，通过度量场景视频特征和原型的特征距离就可以进行未见场景语义类别的识别，显著提升了实际场景中的语义检测能力。
 
-In terms of single-sample action recognition tasks, this system constructs a single-sample action recognition dataset. Following the rules of single-sample action recognition dataset, the training set is composed of 100 categories of data in the "NTU RGB+D 120" dataset. The test set consists of another 20 categories from the "NTU RGB+D 120" dataset and the multi-camera fall behavior scene video dataset MCFD. In the test set, this system takes one sample of each category as the reference sample and the other samples as the test samples.
+![行业应用验证框架](resources\industry_application_validation_framework.png)
 
-In the unsupervised behavioral semantic temporal localization task, the proposed system randomly selects 176 samples from the ActivityNet 1.3 dataset as the test set.
+## 数据集
 
-## Preparation
+在一般的行为识别任务中，本系统构建了一个包含144个类别，共计156910个样本的数据集用于系统的训练与验证。其中包含了自于“NTU RGB+D 120”数据集的120个类别基础运动数据类别，共计114480个三维骨骼数据。此外，为了增强模型的二维骨骼感知能力，本系统从kinetic数据集抽取了24个代表性行为类别，共计42430个视频样本，并对其提取二维骨骼信息构成数据集内容。
+
+在单样本行为识别任务方面，本系统构建了单样本行为识别数据集，遵循单样本行为识别数据集的规则，训练集由“NTU RGB+D 120”数据集中的100个类别的数据构成，测试集由“NTU RGB+D 120”数据集中的另外20个类别和多摄像头跌倒行为场景视频数据集MCFD构成。在测试集中，本系统将每个类别的样本抽取一个作为参考样本，其他样本作为测试样本。
+
+在无监督行为语义时间定位任务中，本系统从ActivityNet 1.3数据集中随机选择176个样本作为测试集。
+
+
+## 环境准备
 
 System：Linux Ubuntu20.04
 
@@ -25,41 +32,40 @@ GPU: NVIDIA 3090
 Pytorch-gpu: 1.12.1
 
 
-The python environment requirements can be found in the [requirements.txt](https://github.com/ZJUT-ERCISS/Meta-learning_Metric_System/blob/main/requirements.txt) or [environments.yaml](https://github.com/ZJUT-ERCISS/Meta-learning_Metric_System/blob/main/environment.yaml). 
+Python环境可从[requirements.txt](https://github.com/ZJUT-ERCISS/Meta-learning_Metric_System/blob/main/requirements.txt) 或者 [environments.yaml](https://github.com/ZJUT-ERCISS/Meta-learning_Metric_System/blob/main/environment.yaml)中获取. 
 
 
-You can download our checkpoint, pickle, list files [here](https://zjuteducn-my.sharepoint.com/:f:/g/personal/211122120051_zjut_edu_cn/EkTP-ovknK1No901VBEDGPYBJ_4qR9va-gEPhKomH7ydRw?e=aR2G2a).
+可在[此处](https://zjuteducn-my.sharepoint.com/:f:/g/personal/211122120051_zjut_edu_cn/EkTP-ovknK1No901VBEDGPYBJ_4qR9va-gEPhKomH7ydRw?e=aR2G2a)下载相关的checkpoint(.ckpt), pickle(.pkl), list(.list)文件.
 
-## Train
+## 训练
 
-You can use the following command to train model:
+运行以下命令可进行用于一般行为识别任务的模型的训练：
 ```
 python ./train_model.py
 ```
 
-## Test
+## 测试
 
-You can use the following command to test our model:
+运行以下命令可以测试模型的一般行为识别性能：
 ```
 python test.py
 ```
-
-You can test the metric performance of our model by running the following command:
+运行以下命令可测试模型在单样本行为识别任务中的度量性能：
 ```
 python metric_eval.py
 ```
 
 
-## Inference
+## 推理
 
-First, you need to create a list file that contains the video file paths and categories as an argument to your inference script. An example is followed:
+首先，需要创建一个包含视频文件路径和类别标签的.list文件作为推理脚本的输入，示例如下:
 ```
 video/example1.mp4 42
 video/example2.mp4 42
 ...
 ```
 
-Then you can use the following command to infer a video:
+之后，可以使用如下命令实现视频的推理：
 
 ```
 python ./engine/infer_action.py
